@@ -1,0 +1,115 @@
+// some data for debuging
+1. for testing critical path method
+//int o[JOBN][MACHN] = {{5,4,4,3},{5,4,4,6},{3,2,3,3},{6,4,4,2},{3,4,1,5}};
+//int arc[2*JOBN*MACHN - JOBN - MACHN][4]={
+	//	{0,0,1,0},
+	//	{0,0,0,1},
+	//	{1,0,2,0},
+	//	{1,0,1,1},
+	//	{2,0,3,0},
+	//	{2,0,2,1},
+	//	{3,0,4,0},
+	//	{3,0,3,1},
+	//	{0,1,1,1},
+	//	{0,1,0,2},
+	//	{1,1,2,1},
+	//	{1,1,1,2},
+	//	{2,1,3,1},
+	//	{2,1,2,2},
+	//	{3,1,4,1},
+	//	{3,1,3,2},
+	//	{0,2,1,2},
+	//	{0,2,0,3},
+	//	{1,2,2,2},
+	//	{1,2,1,3},
+	//	{2,2,3,2},
+	//	{2,2,2,3},
+	//	{3,2,4,2},
+	//	{3,2,3,3},
+	//	{0,3,1,3},
+	//	{1,3,2,3},
+	//	{2,3,3,3},
+	//	{3,3,4,3},
+	//	{4,0,4,1},
+	//	{4,1,4,2},
+	//	{4,2,4,3}
+	//};
+
+2. for testing heuristic algorithm
+	 
+	deque <int> d;
+	osarcSet arcss;
+	arcss.insert( osarc(oss[0][0],oss[0][1], true) );
+	arcss.insert( osarc(oss[0][1],oss[0][2], true) );
+	arcss.insert( osarc(oss[1][1],oss[1][2], true) );
+	arcss.insert( osarc(oss[0][1],oss[1][1], true) );
+	arcss.insert( osarc(oss[1][1],oss[1][0], true) );
+	osarcsFr fr = osarcsFr(arcss,true);
+	fr.rqCheck();
+	osselection osfe = fr.graphGenerate(oss);
+3. 
+
+	//// starting solution
+	//// (noticing that in a full selection 2*JOBN*MACHN - JOBN - MACHN arcs are needed)
+	//int arc[2*JOBN*MACHN - JOBN - MACHN][4]={
+	//	{0,0,0,1},
+	//	{0,0,1,0},
+	//	{0,1,0,2},
+	//	{0,1,2,1},
+	//	{1,0,1,2},
+	//	{1,0,2,0},
+	//	{1,1,1,0},
+	//	{1,1,0,1},
+	//	{1,2,2,2},
+	//	{2,1,2,2},
+	//	{2,2,2,0},
+	//	{2,2,0,2}
+	//};
+	// 
+	//deque <int> d;
+	//osarcSet arcss;
+	//arcss.insert( osarc(oss[0][0],oss[0][1], false) );
+	////arcss.insert( osarc(oss[0][1],oss[0][2], true) );
+	//arcss.insert( osarc(oss[1][1],oss[1][2], false) );
+	//arcss.insert( osarc(oss[0][1],oss[1][1], false) );
+	//arcss.insert( osarc(oss[1][1],oss[1][0], false) );
+	//osarcsFr fr = osarcsFr(arcss);
+	//fr.rqCheck();
+	//fr.levelGeneration();
+	//osselection osfe = fr.graphGenerate(oss);
+	//osfe.print();
+	//osfe.generate_critical_path();
+	//osfe.print_critical();
+	//deque<osarcSet> s = osfe.Sj();
+	//deque<osarcSet>::iterator ittt = s.begin();
+	//while( ittt != s.end() ){
+	//	printOsarcSet(*ittt);
+	//	cout<<"---\n";
+	//	ittt++;
+	//}
+
+	//osselection arcs = *(new osselection);
+	//
+	//arcs.insert(arc,oss);
+	////osarcSet::iterator itt = arcs.arcs.begin();
+	////for(int i= 0; i <4;i++){
+	////	itt++;
+	////}
+	////itt->setdeter(true);
+	////arcs.print();
+	//////arcs.insert(osarc(oss[0][0],oss[1][1]));
+	//////osarcSet os = arcs.f(*(oss[0][0]));
+	//////arcs.generate_critical_path();
+	//////arcs.print_subset(*(oss[1][1]));
+	////arcs.generate_critical_path();
+	////arcs.print_critical();
+	////cout<<arcs.getC_max();
+	//arcs.print_units();
+	//deque <osarcSet> s;
+	//s = arcs.Sj();
+	//deque <osarcSet>::iterator it = s.begin();
+	//while( it != s.end()){
+	//	printOsarcSet(*it);
+	//	cout<<"===========\n";
+	//	it++;
+	//}
